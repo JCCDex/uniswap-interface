@@ -217,7 +217,7 @@ function V1PairMigration({ liquidityTokenAmount, token }: { liquidityTokenAmount
           </TYPE.body>
           <AutoColumn gap="8px">
             <RowBetween>
-              <TYPE.body>V1 Price:</TYPE.body>
+              <TYPE.body>V1 价格:</TYPE.body>
               <TYPE.black>
                 {v1SpotPrice?.toSignificant(6)} {token.symbol}/ETH
               </TYPE.black>
@@ -230,7 +230,7 @@ function V1PairMigration({ liquidityTokenAmount, token }: { liquidityTokenAmount
             </RowBetween>
 
             <RowBetween>
-              <TYPE.body>V2 Price:</TYPE.body>
+              <TYPE.body>V2 价格:</TYPE.body>
               <TYPE.black>
                 {v2SpotPrice?.toSignificant(6)} {token.symbol}/ETH
               </TYPE.black>
@@ -259,7 +259,7 @@ function V1PairMigration({ liquidityTokenAmount, token }: { liquidityTokenAmount
 
           <AutoColumn gap="8px">
             <RowBetween>
-              <TYPE.body>V1 Price:</TYPE.body>
+              <TYPE.body>V1 价格:</TYPE.body>
               <TYPE.black>
                 {v1SpotPrice?.toSignificant(6)} {token.symbol}/ETH
               </TYPE.black>

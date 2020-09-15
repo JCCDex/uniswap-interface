@@ -45,7 +45,7 @@ export default function SwapModalFooter({
       <AutoColumn gap="0px">
         <RowBetween align="center">
           <Text fontWeight={400} fontSize={14} color={theme.text2}>
-            Price
+            价格
           </Text>
           <Text
             fontWeight={500}
@@ -89,7 +89,7 @@ export default function SwapModalFooter({
         <RowBetween>
           <RowFixed>
             <TYPE.black color={theme.text2} fontSize={14} fontWeight={400}>
-              Price Impact
+              滑点
             </TYPE.black>
             <QuestionHelper text="The difference between the market price and your price due to trade size." />
           </RowFixed>
@@ -98,7 +98,7 @@ export default function SwapModalFooter({
         <RowBetween>
           <RowFixed>
             <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
-              Liquidity Provider Fee
+              流动性提供者费用
             </TYPE.black>
             <QuestionHelper text="A portion of each trade (0.30%) goes to liquidity providers as a protocol incentive." />
           </RowFixed>
