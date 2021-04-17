@@ -1,4 +1,5 @@
-import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core'
+import { createWeb3ReactRoot, Web3ReactProvider } from './moac-hacking';
+import { Token, WETH  } from "@uniswap/sdk";
 import 'inter-ui'
 import React, { StrictMode } from 'react'
 // import { isMobile } from 'react-device-detect'
@@ -17,10 +18,15 @@ import UserUpdater from './state/user/updater'
 import ThemeProvider, { FixedGlobalStyle, ThemedGlobalStyle } from './theme'
 import getLibrary from './utils/getLibrary'
 
+
+const WMOAC : any = WETH;
+
+WMOAC[101] = new Token(101, "0x4e00ca2b4f66d22219a2d98af146710fad840f33", 18, "WMOAC", "Wrapped MOAC");
+
 const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName)
 
 if ('ethereum' in window) {
-  ;(window.ethereum as any).autoRefreshOnNetworkChange = false
+  ; (window.ethereum as any).autoRefreshOnNetworkChange = false
 }
 
 // const GOOGLE_ANALYTICS_ID: string | undefined = process.env.REACT_APP_GOOGLE_ANALYTICS_ID
