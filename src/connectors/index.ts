@@ -131,7 +131,6 @@ JsonRpcSigner.prototype.sendUncheckedTransaction = function (transaction) {
   // we look it up for them.
   const value = transaction.value ? transaction.value.toString() : "0";
   const gasLimit = transaction.gasLimit ? transaction.gasLimit.toString() : 5000000
-  const gasPrice = 1000000
   return resolveProperties({
     tx: resolveProperties(transaction),
     sender: fromAddress
@@ -156,7 +155,8 @@ JsonRpcSigner.prototype.sendUncheckedTransaction = function (transaction) {
 
     const nodeUrl = await tp.getNodeUrl({blockchain: 'moac'});
     const chain3 = new Chain3(new Chain3.providers.HttpProvider(nodeUrl?.data?.nodeUrl));
-   
+    const gasPrice = chain3.toSha(100, "gsha");
+
     hexTx.chainId = Number(chain3.version.network);
    
     if (system === "ios") {
