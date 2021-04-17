@@ -1,0 +1,1 @@
+cp ./uniswap-sdk-moac.js node_modules/@uniswap/sdk/dist/sdk.esm.js

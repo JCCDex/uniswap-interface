@@ -83,8 +83,8 @@
     "@walletconnect/web3-provider": "1.1.1-alpha.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "./overwrite-uniswap-sdk.sh && react-scripts start",
+    "build": "./overwrite-uniswap-sdk.sh && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
@@ -105,5 +105,9 @@
       "last 1 safari version"
     ]
   },
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "chain3": "^0.1.23",
+    "tp-js-sdk": "^3.4.2"
+  }
 }
