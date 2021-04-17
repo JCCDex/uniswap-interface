@@ -2,7 +2,9 @@ import { ChainId, Token } from '@uniswap/sdk'
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
+import MoacId from '../../constants/moacId'
 import { AppState } from '../index'
+
 
 type TagDetails = Tags[keyof Tags]
 export interface TagInfo extends TagDetails {
@@ -25,7 +27,7 @@ export class WrappedTokenInfo extends Token {
   }
 }
 
-export type TokenAddressMap = Readonly<{ [chainId in ChainId]: Readonly<{ [tokenAddress: string]: WrappedTokenInfo }> }>
+export type TokenAddressMap = Readonly<{ [chainId in ChainId | MoacId]: Readonly<{ [tokenAddress: string]: WrappedTokenInfo }> }>
 
 /**
  * An empty result, useful as a default.
@@ -35,7 +37,9 @@ const EMPTY_LIST: TokenAddressMap = {
   [ChainId.RINKEBY]: {},
   [ChainId.ROPSTEN]: {},
   [ChainId.GÖRLI]: {},
-  [ChainId.MAINNET]: {}
+  [ChainId.MAINNET]: {},
+  [MoacId.MAIN]: {},
+  [MoacId.TEST]: {}
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
@@ -72,6 +76,7 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
 
 export function useTokenList(url: string | undefined): TokenAddressMap {
   const lists = useSelector<AppState, AppState['lists']['byUrl']>(state => state.lists.byUrl)
+
   return useMemo(() => {
     if (!url) return EMPTY_LIST
     const current = lists[url]?.current

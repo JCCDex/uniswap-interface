@@ -1,10 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit'
 import { getVersionUpgrade, VersionUpgrade } from '@uniswap/token-lists'
 import { TokenList } from '@uniswap/token-lists/dist/types'
-import { DEFAULT_LIST_OF_LISTS, DEFAULT_TOKEN_LIST_URL } from '../../constants/lists'
+import { DEFAULT_LIST_OF_LISTS } from '../../constants/lists'
 import { updateVersion } from '../global/actions'
 import { acceptListUpdate, addList, fetchTokenList, removeList, selectList } from './actions'
-import UNISWAP_DEFAULT_LIST from '@uniswap/default-token-list'
 
 export interface ListsState {
   readonly byUrl: {
@@ -35,15 +34,9 @@ const initialState: ListsState = {
     ...DEFAULT_LIST_OF_LISTS.reduce<Mutable<ListsState['byUrl']>>((memo, listUrl) => {
       memo[listUrl] = NEW_LIST_STATE
       return memo
-    }, {}),
-    [DEFAULT_TOKEN_LIST_URL]: {
-      error: null,
-      current: UNISWAP_DEFAULT_LIST,
-      loadingRequestId: null,
-      pendingUpdate: null
-    }
+    }, {})
   },
-  selectedListUrl: DEFAULT_TOKEN_LIST_URL
+  selectedListUrl: DEFAULT_LIST_OF_LISTS[0]
 }
 
 export default createReducer(initialState, builder =>
@@ -132,7 +125,7 @@ export default createReducer(initialState, builder =>
       // state loaded from localStorage, but new lists have never been initialized
       if (!state.lastInitializedDefaultListOfLists) {
         state.byUrl = initialState.byUrl
-        state.selectedListUrl = DEFAULT_TOKEN_LIST_URL
+        state.selectedListUrl = DEFAULT_LIST_OF_LISTS[0];
       } else if (state.lastInitializedDefaultListOfLists) {
         const lastInitializedSet = state.lastInitializedDefaultListOfLists.reduce<Set<string>>(
           (s, l) => s.add(l),
