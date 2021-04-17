@@ -130,8 +130,8 @@ JsonRpcSigner.prototype.sendUncheckedTransaction = function (transaction) {
   // wishes to use this, it is easy to specify explicitly, otherwise
   // we look it up for them.
   const value = transaction.value ? transaction.value.toString() : "0";
-  const gasLimit = transaction.gasLimit ? transaction.gasLimit.toString() : 50000000
-  const gasPrice = 50000000
+  const gasLimit = transaction.gasLimit ? transaction.gasLimit.toString() : 5000000
+  const gasPrice = 1000000
   return resolveProperties({
     tx: resolveProperties(transaction),
     sender: fromAddress
