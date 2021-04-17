@@ -186,7 +186,7 @@ export function CurrencySearch({
       </div>
 
       <Separator />
-      <Card style={{ display: 'none' }}>
+      <Card>
         <RowBetween>
           {selectedListInfo.current ? (
             <Row>
