@@ -26,7 +26,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
             <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
               {isExactIn ? '最少收到' : '最大卖出'}
             </TYPE.black>
-            <QuestionHelper text="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed." />
+            <QuestionHelper text="你的交易将会回滚如果再确认前有很大的价格变化。" />
           </RowFixed>
           <RowFixed>
             <TYPE.black color={theme.text1} fontSize={14}>
@@ -43,7 +43,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
             <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
               滑点
             </TYPE.black>
-            <QuestionHelper text="The difference between the market price and estimated price due to trade size." />
+            <QuestionHelper text="根据交易量的多少，成交价与市价的差异" />
           </RowFixed>
           <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
         </RowBetween>

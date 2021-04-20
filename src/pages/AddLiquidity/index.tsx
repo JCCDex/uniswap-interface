@@ -237,12 +237,12 @@ export default function AddLiquidity({
         </RowFlat>
         <Row>
           <Text fontSize="24px">
-            {currencies[Field.CURRENCY_A]?.symbol + '/' + currencies[Field.CURRENCY_B]?.symbol + ' Pool Tokens'}
+            {currencies[Field.CURRENCY_A]?.symbol + '/' + currencies[Field.CURRENCY_B]?.symbol + ' 资金池代币'}
           </Text>
         </Row>
         <TYPE.italic fontSize={12} textAlign="left" padding={'8px 0 0 0 '}>
-          {`Output is estimated. If the price changes by more than ${allowedSlippage /
-            100}% your transaction will revert.`}
+          {`得到的值是预估的。如果价格变化超过 ${allowedSlippage /
+            100}% 你的交易会回滚。`}
         </TYPE.italic>
       </AutoColumn>
     )
@@ -313,7 +313,7 @@ export default function AddLiquidity({
             hash={txHash}
             content={() => (
               <ConfirmationModalContent
-                title={noLiquidity ? 'You are creating a pool' : 'You will receive'}
+                title={noLiquidity ? '你正在创建资金池' : '你将收到'}
                 onDismiss={handleDismissConfirmation}
                 topContent={modalHeader}
                 bottomContent={modalBottom}
