@@ -327,13 +327,13 @@ export default function AddLiquidity({
                 <BlueCard>
                   <AutoColumn gap="10px">
                     <TYPE.link fontWeight={600} color={'primaryText1'}>
-                      You are the first liquidity provider.
+                      你是第一个流动性提供者
                     </TYPE.link>
                     <TYPE.link fontWeight={400} color={'primaryText1'}>
-                      The ratio of tokens you add will set the price of this pool.
+                      你添加的代币比率将设置资金池的价格。
                     </TYPE.link>
                     <TYPE.link fontWeight={400} color={'primaryText1'}>
-                      Once you are happy with the rate click supply to review.
+                      对价格满意后，请点击供应量进行确认。
                     </TYPE.link>
                   </AutoColumn>
                 </BlueCard>

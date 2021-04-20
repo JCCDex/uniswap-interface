@@ -196,12 +196,12 @@ const ListRow = memo(function ListRow({ listUrl, onBack }: { listUrl: string; on
           <PopoverContainer show={true} ref={setPopperElement as any} style={styles.popper} {...attributes.popper}>
             <div>{list && listVersionLabel(list.version)}</div>
             <SeparatorDark />
-            <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>View list</ExternalLink>
+            <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>查看列表</ExternalLink>
             <UnpaddedLinkStyledButton onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>
-              Remove list
+              删除列表
             </UnpaddedLinkStyledButton>
             {pending && (
-              <UnpaddedLinkStyledButton onClick={handleAcceptListUpdate}>Update list</UnpaddedLinkStyledButton>
+              <UnpaddedLinkStyledButton onClick={handleAcceptListUpdate}>更新列表</UnpaddedLinkStyledButton>
             )}
           </PopoverContainer>
         )}
@@ -212,7 +212,7 @@ const ListRow = memo(function ListRow({ listUrl, onBack }: { listUrl: string; on
           className="select-button"
           style={{ width: '5rem', minWidth: '5rem', padding: '0.5rem .35rem', borderRadius: '12px', fontSize: '14px' }}
         >
-          Selected
+          已选择
         </ButtonPrimary>
       ) : (
         <>
@@ -227,7 +227,7 @@ const ListRow = memo(function ListRow({ listUrl, onBack }: { listUrl: string; on
             }}
             onClick={selectThisList}
           >
-            Select
+            选择
           </ButtonPrimary>
         </>
       )}
@@ -328,7 +328,7 @@ export function ListSelect({ onDismiss, onBack }: { onDismiss: () => void; onBac
             <ArrowLeft style={{ cursor: 'pointer' }} onClick={onBack} />
           </div>
           <Text fontWeight={500} fontSize={20}>
-            Manage Lists
+            管理列表
           </Text>
           <CloseIcon onClick={onDismiss} />
         </RowBetween>
@@ -338,7 +338,7 @@ export function ListSelect({ onDismiss, onBack }: { onDismiss: () => void; onBac
 
       <PaddedColumn gap="14px">
         <Text fontWeight={600}>
-          Add a list{' '}
+          添加列表{' '}
           <QuestionHelper text="Token lists are an open specification for lists of ERC20 tokens. You can use any token list by entering its URL below. Beware that third party token lists can contain fake or malicious ERC20 tokens." />
         </Text>
         <Row>
@@ -352,7 +352,7 @@ export function ListSelect({ onDismiss, onBack }: { onDismiss: () => void; onBac
             style={{ height: '2.75rem', borderRadius: 12, padding: '12px' }}
           />
           <AddListButton onClick={handleAddList} disabled={!validUrl}>
-            Add
+            添加
           </AddListButton>
         </Row>
         {addError ? (
@@ -372,7 +372,7 @@ export function ListSelect({ onDismiss, onBack }: { onDismiss: () => void; onBac
       <Separator />
 
       <div style={{ padding: '16px', textAlign: 'center' }}>
-        <ExternalLink href="https://tokenlists.org">Browse lists</ExternalLink>
+        <ExternalLink href="https://tokenlists.org">浏览器列表</ExternalLink>
       </div>
     </Column>
   )

@@ -12,7 +12,7 @@ import { StyledInternalLink, TYPE } from '../../theme'
 import { Text } from 'rebass'
 import { LightCard } from '../../components/Card'
 import { RowBetween } from '../../components/Row'
-import { ButtonPrimary, ButtonSecondary } from '../../components/Button'
+import { ButtonPrimary } from '../../components/Button'
 import { AutoColumn } from '../../components/Column'
 
 import { useActiveWeb3React } from '../../hooks'
@@ -72,7 +72,7 @@ export default function Pool() {
               <Text color={theme.text1} fontWeight={500}>
                 你的流动性资金池
               </Text>
-              <Question text="When you add liquidity, you are given pool tokens that represent your share. If you don’t see a pool you joined in this list, try importing a pool below." />
+              <Question text="当你添加了流动性，会收到对应的资金池的流动性代币代表你在池子中的份额。如果你看不到你加入的资金池，尝试在下方导入。" />
             </RowBetween>
 
             {!account ? (
@@ -113,11 +113,11 @@ export default function Pool() {
         </AutoColumn>
       </AppBody>
 
-      <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
+      {/* <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
         <ButtonSecondary as={Link} style={{ width: 'initial' }} to="/migrate/v1">
           Migrate V1 Liquidity
         </ButtonSecondary>
-      </div>
+      </div> */}
     </>
   )
 }

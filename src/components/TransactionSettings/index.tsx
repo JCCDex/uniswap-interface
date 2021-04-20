@@ -149,9 +149,9 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
       <AutoColumn gap="sm">
         <RowFixed>
           <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
-            Slippage tolerance
+          滑点限制
           </TYPE.black>
-          <QuestionHelper text="Your transaction will revert if the price changes unfavorably by more than this percentage." />
+          <QuestionHelper text="你的交易会被回滚如果价格变化超过设置的滑点" />
         </RowFixed>
         <RowBetween>
           <Option
@@ -215,10 +215,10 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
             }}
           >
             {slippageError === SlippageError.InvalidInput
-              ? 'Enter a valid slippage percentage'
+              ? '输入一个合法的百分比'
               : slippageError === SlippageError.RiskyLow
-              ? 'Your transaction may fail'
-              : 'Your transaction may be frontrun'}
+              ? '你的交易可能会失败'
+              : '你的交易可能会被提前交易'}
           </RowBetween>
         )}
       </AutoColumn>
@@ -226,9 +226,9 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
       <AutoColumn gap="sm">
         <RowFixed>
           <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
-            Transaction deadline
+          交易超时时间
           </TYPE.black>
-          <QuestionHelper text="Your transaction will revert if it is pending for more than this long." />
+          <QuestionHelper text="你的交易会被回滚如果确认时间超过设置值" />
         </RowFixed>
         <RowFixed>
           <OptionCustom style={{ width: '80px' }} tabIndex={-1}>
@@ -243,7 +243,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
             />
           </OptionCustom>
           <TYPE.body style={{ paddingLeft: '8px' }} fontSize={14}>
-            minutes
+            分钟
           </TYPE.body>
         </RowFixed>
       </AutoColumn>

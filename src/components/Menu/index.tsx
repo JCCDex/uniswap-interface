@@ -96,15 +96,15 @@ export default function Menu() {
         <MenuFlyout>
           <MenuItem id="link" href="https://uniswap.org/">
             <Info size={14} />
-            About
+            关于
           </MenuItem>
           <MenuItem id="link" href="https://uniswap.org/docs/v2">
             <BookOpen size={14} />
-            Docs
+            文档
           </MenuItem>
           <MenuItem id="link" href={CODE_LINK}>
             <Code size={14} />
-            Code
+            代码
           </MenuItem>
           <MenuItem id="link" href="https://discord.gg/EwFs3Pp">
             <MessageCircle size={14} />
@@ -112,7 +112,7 @@ export default function Menu() {
           </MenuItem>
           <MenuItem id="link" href="https://uniswap.info/">
             <PieChart size={14} />
-            Analytics
+            分析
           </MenuItem>
         </MenuFlyout>
       )}
