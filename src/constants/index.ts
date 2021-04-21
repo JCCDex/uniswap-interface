@@ -32,7 +32,11 @@ const WETH_ONLY: ChainTokenList = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR]
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR],
+  [MoacId.TEST]: [new Token(101, "0x4e00ca2b4f66d22219a2d98af146710fad840f33", 18, "WMOAC", "Wrapped MOAC"),
+  new Token(101, "0xf989061343370ad9bde7992f28f1015ea776fe64", 18, "SWT", "SWT"),
+  new Token(101, "0xf0f5197c6f0b6b402571c29e53ddeeeb8824eff8", 18, "USDT", "USDT"),
+  new Token(101, "0xe592303d955ca9c515a7d62f374cf46cbeb42dfb", 18, "TPT", "TPT")]
 }
 
 /**
