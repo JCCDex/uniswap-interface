@@ -116,6 +116,14 @@ async function augmentConnectorUpdate(
   const wallet = await tp.getCurrentWallet()
   const account = normalizeAccount(wallet.data.address);
   const provider= chain3.currentProvider;
+
+  // const Chain3 = require('chain3');
+  // const nodeUrl = {data: {nodeUrl: "https://moactesta.jccdex.cn"}}
+  // const chain3 = new Chain3(new Chain3.providers.HttpProvider(nodeUrl.data.nodeUrl));
+  // const chainId = Number(chain3.version.network);
+  // const wallet = {data: {address: "0x19025ff997e784d244a0b123c0c045d36f37afb9"}} || await tp.getCurrentWallet()
+  // let account = normalizeAccount(wallet.data.address);
+  // const provider= chain3.currentProvider;
   return { provider, chainId, account }
 }
 
