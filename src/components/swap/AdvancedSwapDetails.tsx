@@ -86,9 +86,9 @@ export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
               <AutoColumn style={{ padding: '0 24px' }}>
                 <RowFixed>
                   <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
-                    Route
+                    路径
                   </TYPE.black>
-                  <QuestionHelper text="Routing through these tokens resulted in the best price for your trade." />
+                  <QuestionHelper text="通过这个路径得到最优的价格." />
                 </RowFixed>
                 <SwapRoute trade={trade} />
               </AutoColumn>
