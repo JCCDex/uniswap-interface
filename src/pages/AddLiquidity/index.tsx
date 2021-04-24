@@ -418,7 +418,7 @@ export default function AddLiquidity({
                           width={approvalA !== ApprovalState.APPROVED ? '48%' : '100%'}
                         >
                           {approvalB === ApprovalState.PENDING ? (
-                            <Dots>Approving {currencies[Field.CURRENCY_B]?.symbol}</Dots>
+                            <Dots>授权中 {currencies[Field.CURRENCY_B]?.symbol}</Dots>
                           ) : (
                             '授权 ' + currencies[Field.CURRENCY_B]?.symbol
                           )}
